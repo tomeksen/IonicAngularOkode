@@ -1,13 +1,17 @@
 <ion-item *ngIf="item" [routerLink]="'/pelicula/' + item.id" [detail]="false">
   <ion-label class="ion-text-wrap">
-    <h2>
+    <ion-img  [src]="getlink()" style='width: 150px;height: 150px;'></ion-img>
+
+    <h2 style="padding-left: 25px;padding-top: 20px;">
+      
       {{ item.title }}
       <span class="date">
         <ion-note>{{ item.release_date }}</ion-note>
         <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
       </span>
-    </h2>
-    <p>
-      {{ item.overview }}    </p>
+    </h2><br>
+    <p style="font-size: small;padding-left: 10px;">
+      {{ item.overview }}    
+    </p>
   </ion-label>
   </ion-item>

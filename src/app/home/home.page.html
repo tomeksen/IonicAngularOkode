@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-toolbar>
-<ion-searchbar></ion-searchbar>
+<ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 </ion-toolbar>
 
 <ion-content [fullscreen]="true">

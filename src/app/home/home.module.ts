@@ -13,7 +13,7 @@ import { peliculaComponentModule } from '../pelicula/pelicula.module';
     FormsModule,
     IonicModule,
     peliculaComponentModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
   declarations: [HomePage]
 })

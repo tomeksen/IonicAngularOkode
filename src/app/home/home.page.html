@@ -5,6 +5,9 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-toolbar>
+<ion-searchbar></ion-searchbar>
+</ion-toolbar>
 
 <ion-content [fullscreen]="true">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
@@ -20,6 +23,12 @@
   </ion-header>
   
   <ion-list>
-    <app-pelicula *ngFor="let message of getMessages()" [message]="message"></app-pelicula>
+    <app-pelicula *ngFor="let item of goLoad()" [item]="item"></app-pelicula>
   </ion-list>
+</ion-content>
+<ion-content>
+  <ion-button (click)="getdata()">
+    Get
+  </ion-button>
+  {{listaData}}
 </ion-content>

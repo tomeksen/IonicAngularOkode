@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '../services/data.service';
+import { Pelicula,item } from '../services/data.service';
 
 @Component({
-  selector: 'app-message',
+  selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
   styleUrls: ['./pelicula.component.scss'],
 })
 export class peliculaComponent implements OnInit {
-  @Input() message: Message;
+  @Input() item: item;
 
   constructor() { }
 

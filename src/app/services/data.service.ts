@@ -1,5 +1,19 @@
+import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
+export interface item{
+    genre_ids:[];
+    original_title:string;
+    original_lenguage:string;
+    media_type:string;
+    overview:string;
+    release_date:string;
+    title:string;
+    vote_average: number;
+    poster_path:string;
+}
 export interface Message {
   fromName: string;
   subject: string;
@@ -8,7 +22,8 @@ export interface Message {
   read: boolean;
 }
 export interface Pelicula{
-  
+  page:number;
+  results:item[];
 }
 
 @Injectable({
@@ -30,52 +45,9 @@ export class DataService {
       id: 1,
       read: false
     },
-    {
-      fromName: 'Jordan Firth',
-      subject: 'Report Results',
-      date: '4:55 AM',
-      id: 2,
-      read: false
-    },
-    {
-      fromName: 'Bill Thomas',
-      subject: 'The situation',
-      date: 'Yesterday',
-      id: 3,
-      read: false
-    },
-    {
-      fromName: 'Joanne Pollan',
-      subject: 'Updated invitation: Swim lessons',
-      date: 'Yesterday',
-      id: 4,
-      read: false
-    },
-    {
-      fromName: 'Andrea Cornerston',
-      subject: 'Last minute ask',
-      date: 'Yesterday',
-      id: 5,
-      read: false
-    },
-    {
-      fromName: 'Moe Chamont',
-      subject: 'Family Calendar - Version 1',
-      date: 'Last Week',
-      id: 6,
-      read: false
-    },
-    {
-      fromName: 'Kelly Richardson',
-      subject: 'Placeholder Headhots',
-      date: 'Last Week',
-      id: 7,
-      read: false
-    }
   ];
-
-  constructor() { }
-
+  constructor(private http: HttpClient) { }
+  datos:any;
   public getMessages(): Message[] {
     return this.messages;
   }

@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { ViewMessagePageRoutingModule } from './view-message-routing.module';
+import { ViewPeliculaPageRoutingModule } from './view-pelicula-routing.module';
 
-import { ViewMessagePage } from './view-message.page';
+import { ViewPeliculaPage } from './view-pelicula.page';
 
 describe('ViewMessagePage', () => {
-  let component: ViewMessagePage;
-  let fixture: ComponentFixture<ViewMessagePage>;
+  let component: ViewPeliculaPage;
+  let fixture: ComponentFixture<ViewPeliculaPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewMessagePage ],
-      imports: [IonicModule.forRoot(), ViewMessagePageRoutingModule, RouterModule.forRoot([])]
+      declarations: [ ViewPeliculaPage ],
+      imports: [IonicModule.forRoot(), ViewPeliculaPageRoutingModule, RouterModule.forRoot([])]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ViewMessagePage);
+    fixture = TestBed.createComponent(ViewPeliculaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

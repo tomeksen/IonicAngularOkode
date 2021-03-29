@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService, Message } from '../services/data.service';
 
 @Component({
-  selector: 'app-view-message',
-  templateUrl: './view-message.page.html',
-  styleUrls: ['./view-message.page.scss'],
+  selector: 'app-view-pelicula',
+  templateUrl: './view-pelicula.page.html',
+  styleUrls: ['./view-pelicula.page.scss'],
 })
-export class ViewMessagePage implements OnInit {
+export class ViewPeliculaPage implements OnInit {
   public message: Message;
 
   constructor(

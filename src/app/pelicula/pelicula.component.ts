@@ -3,10 +3,10 @@ import { Message } from '../services/data.service';
 
 @Component({
   selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.scss'],
+  templateUrl: './pelicula.component.html',
+  styleUrls: ['./pelicula.component.scss'],
 })
-export class MessageComponent implements OnInit {
+export class peliculaComponent implements OnInit {
   @Input() message: Message;
 
   constructor() { }

@@ -7,6 +7,9 @@ export interface Message {
   id: number;
   read: boolean;
 }
+export interface Pelicula{
+  
+}
 
 @Injectable({
   providedIn: 'root'

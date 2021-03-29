@@ -10,7 +10,7 @@ export interface Item{
     id:number;
     genres:genre_ids;
     original_title:string;
-    original_lenguage:string;
+    original_language:string;
     media_type:string;
     overview:string;
     release_date:string;

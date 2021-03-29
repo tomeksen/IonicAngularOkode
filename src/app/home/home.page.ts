@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService,Item,Pelicula } from '../services/data.service';
+import { Item,Pelicula } from '../services/data.service';
 import { HttpClient } from "@angular/common/http";
 
 @Component({
@@ -14,7 +14,7 @@ export class HomePage {
   textoBuscar="";
   textInput:string;
 
-  constructor(private data: DataService,private http: HttpClient) {
+  constructor(private http: HttpClient) {
     //lanzo la primera ejecucion para que cargue los objetos en la página
     this.goLoad();
   }
@@ -40,6 +40,7 @@ export class HomePage {
     }
     return undefined;
   }
+  //función para buscar la película que quieras por el nombre
   async goSearch(){
     await this.http.get("https://api.themoviedb.org/3/search/movie?api_key=e2ef68da80d5b41a8bac1cafcd3e2b23&language=es-ES&query="+this.textInput+"&page=1&include_adult=false").subscribe(data=>{
     var obj= (data as Pelicula);

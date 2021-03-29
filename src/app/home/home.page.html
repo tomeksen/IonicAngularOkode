@@ -1,13 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Inbox
+      Aplicación ver peliculas
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-item>
+  <ion-searchbar  style="margin-left: 20px; width: 20%;" [(ngModel)]="textInput" placeholder="Buscador" animated  ></ion-searchbar>
+  <ion-button style="width: 10%;height: 75%;"  clear (click)="goSearch()"  >Buscar</ion-button>
+  
+</ion-item>
+
 <ion-toolbar>
-<ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
+  <ion-searchbar animated  (ionChange)="buscar($event)" placeholder="Filtro" style="margin-left: 80%;padding-right: 30px;width: fit-content;"></ion-searchbar>
 </ion-toolbar>
+
 
 <ion-content [fullscreen]="true">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
@@ -23,6 +31,6 @@
   </ion-header>
   
   <ion-list>
-    <app-pelicula *ngFor="let item of listaData" [item]="item"></app-pelicula>
+    <app-pelicula *ngFor="let item of listaData | filtro:textoBuscar" [item]="item"></app-pelicula>
   </ion-list>
 </ion-content>

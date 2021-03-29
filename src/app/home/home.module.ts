@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { peliculaComponentModule } from '../pelicula/pelicula.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { peliculaComponentModule } from '../pelicula/pelicula.module';
     IonicModule,
     peliculaComponentModule,
     HomePageRoutingModule,
+    PipesModule
   ],
   declarations: [HomePage]
 })

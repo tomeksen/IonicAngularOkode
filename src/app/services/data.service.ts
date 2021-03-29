@@ -31,28 +31,7 @@ export interface Pelicula{
   providedIn: 'root'
 })
 export class DataService {
-  public messages: Message[] = [
-    {
-      fromName: 'Matt Chorsey',
-      subject: 'New event: Trip to Vegas',
-      date: '9:32 AM',
-      id: 0,
-      read: false
-    },
-    {
-      fromName: 'Lauren Ruthford',
-      subject: 'Long time no chat',
-      date: '6:12 AM',
-      id: 1,
-      read: false
-    },
-  ];
-  constructor(private http: HttpClient) { }
-  public getMessages(): Message[] {
-    return this.messages;
-  }
 
-  public getMessageById(id: number): Message {
-    return this.messages[id];
-  }
+  constructor(private http: HttpClient) { }
+
 }

@@ -1,19 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Aplicación ver peliculas
+      Aplicación ver peliculas Okode
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-item>
-  <ion-searchbar  style="margin-left: 20px; width: 20%;" [(ngModel)]="textInput" placeholder="Buscador" animated  ></ion-searchbar>
-  <ion-button style="width: 10%;height: 75%;"  clear (click)="goSearch()"  >Buscar</ion-button>
+  <ion-searchbar  style="margin-left: 20px; width: auto;" [(ngModel)]="textInput" placeholder="Buscador" animated  ></ion-searchbar>
+  <ion-button style="width: auto;height: 40px;"  clear (click)="goSearch()"  >Buscar</ion-button>
   
 </ion-item>
 
 <ion-toolbar>
-  <ion-searchbar animated  (ionChange)="buscar($event)" placeholder="Filtro" style="margin-left: 80%;padding-right: 30px;width: fit-content;"></ion-searchbar>
+  <ion-searchbar animated  (ionChange)="buscar($event)" placeholder="Filtro" style="margin-left: auto;margin-right: 30px;width: 180px;"></ion-searchbar>
 </ion-toolbar>
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService, Item, Message } from '../services/data.service';
+import { DataService, Item,genre_ids } from '../services/data.service';
 import { HttpClient } from "@angular/common/http";
 
 @Component({
@@ -10,25 +10,31 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ViewPeliculaPage implements OnInit {
   public item: Item;
-
+  public genre:genre_ids;
   constructor(private http: HttpClient,
     private data: DataService,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) { 
+}
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    //this.item = this.data.getMessageById(parseInt(id, 10));
+    this.getDataById(parseInt(id));
   }
-  getDataById(){//https://api.themoviedb.org/3/movie/{movie_id}?api_key=e2ef68da80d5b41a8bac1cafcd3e2b23&language=es-ES
-    this.http.get("https://api.themoviedb.org/3/movie/top_rated?api_key=e2ef68da80d5b41a8bac1cafcd3e2b23&language=es-ES&page=20").subscribe(data=>{
-    var obj= (data as Pelicula);
-    console.log(obj.results);
-    this.listaData=obj.results;
+  getDataById(id){//https://api.themoviedb.org/3/movie/{movie_id}?api_key=e2ef68da80d5b41a8bac1cafcd3e2b23&language=es-ES
+    this.http.get("https://api.themoviedb.org/3/movie/"+id+"?api_key=e2ef68da80d5b41a8bac1cafcd3e2b23&language=es-ES").subscribe(data=>{
+    var obj= (data as Item);
+    console.log(obj);
+    this.item=obj;
+    this.genre=this.item.genres;
+    console.log(this.item.genres)
     }),error=>{
       console.log(error);
     }
     return undefined;
+  }
+  getlink(){
+    return "https://www.themoviedb.org/t/p/w300_and_h450_bestv2"+this.item.poster_path;
   }
   getBackButtonText() {
     const win = window as any;

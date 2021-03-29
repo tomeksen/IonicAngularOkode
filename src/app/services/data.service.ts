@@ -2,10 +2,13 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-
+export interface genre_ids{
+  id:number;
+  name:string
+}
 export interface Item{
     id:number;
-    genre_ids:[];
+    genres:genre_ids;
     original_title:string;
     original_lenguage:string;
     media_type:string;

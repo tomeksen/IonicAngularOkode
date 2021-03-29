@@ -23,12 +23,6 @@
   </ion-header>
   
   <ion-list>
-    <app-pelicula *ngFor="let item of goLoad()" [item]="item"></app-pelicula>
+    <app-pelicula *ngFor="let item of listaData" [item]="item"></app-pelicula>
   </ion-list>
-</ion-content>
-<ion-content>
-  <ion-button (click)="getdata()">
-    Get
-  </ion-button>
-  {{listaData}}
 </ion-content>

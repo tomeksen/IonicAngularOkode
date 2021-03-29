@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pelicula,item } from '../services/data.service';
+import { Pelicula,Item } from '../services/data.service';
 
 @Component({
   selector: 'app-pelicula',
@@ -7,7 +7,7 @@ import { Pelicula,item } from '../services/data.service';
   styleUrls: ['./pelicula.component.scss'],
 })
 export class peliculaComponent implements OnInit {
-  @Input() item: item;
+  @Input() item: Item;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService, Message,Pelicula } from '../services/data.service';
+import { DataService,Item,Pelicula } from '../services/data.service';
 import { HttpClient } from "@angular/common/http";
 
 
@@ -9,8 +9,9 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  //public listaData:Pelicula;
+  public listaData:Item[];
   constructor(private data: DataService,private http: HttpClient) {
+    this.goLoad();
   }
 
   
@@ -19,11 +20,11 @@ export class HomePage {
       ev.detail.complete();
     }, 3000);
   }
-   goLoad(): Pelicula{
+   goLoad(){
      this.http.get("https://api.themoviedb.org/3/movie/top_rated?api_key=e2ef68da80d5b41a8bac1cafcd3e2b23&language=en-US&page=20").subscribe(data=>{
-    const obj= (data as Pelicula);
-    //console.log(obj.results[0].title);
-    return obj.results;
+    var obj= (data as Pelicula);
+    console.log(obj.results);
+    this.listaData=obj.results;
     }),error=>{
       console.log(error);
     }

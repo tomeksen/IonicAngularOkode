@@ -1,5 +1,4 @@
-<ion-item *ngIf="item" [routerLink]="'/pelicula/' + item.title" [detail]="false">
-  <div slot="start" [class]="!item.read ? 'dot dot-unread' : 'dot'"></div>
+<ion-item *ngIf="item" [routerLink]="'/pelicula/' + item.id" [detail]="false">
   <ion-label class="ion-text-wrap">
     <h2>
       {{ item.title }}
@@ -8,7 +7,6 @@
         <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
       </span>
     </h2>
-    <h3></h3>
     <p>
       {{ item.overview }}    </p>
   </ion-label>

@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
-export interface item{
+export interface Item{
+    id:number;
     genre_ids:[];
     original_title:string;
     original_lenguage:string;
@@ -23,7 +24,7 @@ export interface Message {
 }
 export interface Pelicula{
   page:number;
-  results:item[];
+  results:Item[];
 }
 
 @Injectable({
@@ -47,7 +48,6 @@ export class DataService {
     },
   ];
   constructor(private http: HttpClient) { }
-  datos:any;
   public getMessages(): Message[] {
     return this.messages;
   }
